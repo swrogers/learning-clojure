@@ -42,4 +42,6 @@ Here is a handy table of Emacs keys that one might find useful from this page
 
 ## Now to actually start learning the language
 
-Hopefully that makes some sense, now it's on to starting to learn things...
+Hopefully that makes some sense, now it's [on to starting to learn things](3-doing-something.md
+
+)...

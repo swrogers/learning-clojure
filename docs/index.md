@@ -9,3 +9,5 @@ This is going to be the place where, once the day has come to wind down, I'll re
 [First steps](1-first-steps.md)
 
 [Emacs](2-emacs.md)
+
+[Doing Something](3-doing-something.md)
