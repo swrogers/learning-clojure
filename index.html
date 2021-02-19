@@ -71,12 +71,109 @@
     <div class="pure-u-1-5">
       <div class="yp-index-meta">
         <i class="fa fa-clock-o"></i>
-        <time datetime="2021-02-19T15:14:51-06:00" class="yp-index-meta__date"><span id="365250d2-ba87-4052-b8bf-bd7414bc0fec">
+        <time datetime="2021-02-19T16:03:12-06:00" class="yp-index-meta__date"><span id="d95bec3c-1d70-47a6-a174-6dc3e0402842">
 
   </span>
   <script>
     (function(){
-      var el = document.getElementById("365250d2-ba87-4052-b8bf-bd7414bc0fec");
+      var el = document.getElementById("d95bec3c-1d70-47a6-a174-6dc3e0402842");
+      var fromNow = moment("2021-02-19T16:03:12-06:00").fromNow();
+      el.innerHTML = fromNow;
+    })();
+  </script></time><div class="yp-index-meta__tags">
+        </div>
+      </div>
+    </div>
+
+    <div class="pure-u-4-5">
+      <article class="yp-index-post"><h2 class="yp-index-post__title">
+          <a href="posts/clojure-and-functions/" class="yp-index-post__link">
+            Clojure and Functions
+          </a>
+        </h2>
+        <h3 class="yp-index-post__subtitle">
+          
+        </h3>
+          <div class="yp-index-post__body">
+            <div>
+<h3>Clojure and Functions</h3>
+<p>With basics covered, time to cover functions.</p>
+<p>Use <code>defn</code> to define one's own functions. Function definitions have five parts:</p>
+<ul>
+<li>
+<p>defn</p>
+</li>
+<li>
+<p>Function Name</p>
+</li>
+<li>
+<p>Optional - Docstring</p>
+</li>
+<li>
+<p>bracket of parameters</p>
+</li>
+<li>
+<p>function body</p>
+</li>
+</ul>
+<p>Example:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">function-name</span>
+    <span class="s">"This is an interesting function that does something nifty."</span>
+    <span class="p">[</span><span class="nv">parameter</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"Let's build a string! Your parameter was "</span> <span class="nv">parameter</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nf">function-name</span> <span class="s">"PARAMETER HERE!!"</span><span class="p">)</span>
+</pre>
+<h4>Arity and overloading</h4>
+<p>Functions have an <em>arity</em>, that is, how many parameters they take. Functions can be overloaded to run different forms depending on arity. Note that each function form is wrapped in its own paren set:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">overloaded-function</span>
+    <span class="c1">;; 3 arity</span>
+    <span class="p">([</span><span class="nv">one</span> <span class="nv">two</span> <span class="nv">three</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"one: "</span> <span class="nv">one</span> <span class="s">"two: "</span> <span class="nv">two</span> <span class="s">"three: "</span> <span class="nv">three</span><span class="p">))</span>
+    <span class="c1">;; 2 arity</span>
+    <span class="p">([</span><span class="nv">one</span> <span class="nv">two</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"one: "</span> <span class="nv">one</span> <span class="s">"two: "</span> <span class="nv">two</span><span class="p">))</span>
+    <span class="c1">;; 1 arity</span>
+    <span class="p">([</span><span class="nv">one</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"one: "</span> <span class="nv">one</span><span class="p">))</span>
+    <span class="c1">;; 0 arity</span>
+    <span class="p">([]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"no args here!"</span><span class="p">)))</span>
+</pre>
+<p>You can use the above as a method to provide default arguments, by calling the function from itself:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">i-have-default-second-arg</span>
+    <span class="s">"The second argument will have a default here..."</span>
+    <span class="p">([</span><span class="nv">arg1</span> <span class="nv">arg2</span><span class="p">]</span>
+        <span class="p">(</span><span class="nb">str </span><span class="s">"arg1: "</span> <span class="nv">arg1</span> <span class="s">"arg2: "</span> <span class="nv">arg2</span><span class="p">))</span>
+    <span class="p">([</span><span class="nv">arg1</span><span class="p">]</span>
+        <span class="p">(</span><span class="nf">i-have-default-second-arg</span> <span class="nv">arg1</span> <span class="s">"default"</span><span class="p">)))</span>
+</pre>
+<h4>The <code>Rest</code> parameter</h4>
+<p>Another way to define multi-arity functions is with the <em>rest</em> parameter: <code>&amp;</code>.  When this method is used, it says to place all the rest of the included parameters into the named list.</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">named-shopping-list</span>
+    <span class="s">"The first parameter will be the name of the list: list-name.</span>
+<span class="s">     The remaining parameters will be added to the list: shopping-list"</span>
+    <span class="p">[</span><span class="nv">list-name</span> <span class="o">&amp;</span> <span class="nv">shopping-list</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"List name: "</span> <span class="nv">list-name</span>
+        <span class="s">"List items: "</span> <span class="nv">shopping-list</span><span class="p">))</span>
+</pre>
+<h4>Destructuring</h4>
+<p>Another way to define parameters, binding names to items within the collection.</p>
+<p>This is done by passing the parameter list inside a vector.</p>
+</div>
+          </div>
+      </article>
+</div>
+
+    <div class="pure-u-1-5">
+      <div class="yp-index-meta">
+        <i class="fa fa-clock-o"></i>
+        <time datetime="2021-02-19T15:14:51-06:00" class="yp-index-meta__date"><span id="99366136-dfe2-4b0a-b1ba-bf7310c0542d">
+
+  </span>
+  <script>
+    (function(){
+      var el = document.getElementById("99366136-dfe2-4b0a-b1ba-bf7310c0542d");
       var fromNow = moment("2021-02-19T15:14:51-06:00").fromNow();
       el.innerHTML = fromNow;
     })();
@@ -224,6 +321,26 @@
 <pre class="code literal-block"><span class="p">(</span><span class="nb">conj </span><span class="o">'</span><span class="p">(</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
 </pre>
 <p>Lists are good for needing to add to the beginning of a sequence, otherwise use a vector.</p>
+<h4>Sets</h4>
+<p>Come in hash-sets and sorted-sets. Here's a hash-set:</p>
+<pre class="code literal-block"><span class="o">#</span><span class="p">{</span><span class="s">"string"</span> <span class="mi">5</span> <span class="ss">:key</span> <span class="s">"whatever"</span><span class="p">}</span>
+</pre>
+<p>And another, made with <code>hash-set</code>:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="nb">hash-set </span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span>
+</pre>
+<p>Keep in mind, that there are no duplicates in a hash set.</p>
+<p>Hash sets can be created with the <code>set</code> function as well, from existing vectors:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="nb">set </span><span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">])</span>
+</pre>
+<p>Use <code>contains?</code> to check for existance within the set:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="nb">contains? </span><span class="o">#</span><span class="p">{</span><span class="ss">:a</span> <span class="ss">:b</span> <span class="mi">0</span> <span class="mi">1</span> <span class="s">"string"</span><span class="p">}</span> <span class="ss">:b</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">contains? </span><span class="o">#</span><span class="p">{</span><span class="ss">:a</span> <span class="ss">:b</span> <span class="mi">0</span> <span class="mi">1</span> <span class="s">"string"</span><span class="p">}</span> <span class="ss">:not-gonna-find-me</span><span class="p">)</span>
+</pre>
+<p>Keywords work the same as in Maps:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="ss">:keyItem</span> <span class="o">#</span><span class="p">{</span><span class="ss">:keyItem</span> <span class="ss">:keyItemAnother</span><span class="p">})</span>
+</pre>
+<p>The above returns <code>:keyItem</code>. </p>
+<p>The <code>get</code> function works as expected, too.</p>
 </div>
           </div>
       </article>
@@ -232,12 +349,12 @@
     <div class="pure-u-1-5">
       <div class="yp-index-meta">
         <i class="fa fa-clock-o"></i>
-        <time datetime="2021-02-19T14:22:33-06:00" class="yp-index-meta__date"><span id="f9ceefbc-ceb3-4b06-be95-3fffaf16c1e8">
+        <time datetime="2021-02-19T14:22:33-06:00" class="yp-index-meta__date"><span id="1ca5319e-7be5-4624-b0f6-d28d4d64c88e">
 
   </span>
   <script>
     (function(){
-      var el = document.getElementById("f9ceefbc-ceb3-4b06-be95-3fffaf16c1e8");
+      var el = document.getElementById("1ca5319e-7be5-4624-b0f6-d28d4d64c88e");
       var fromNow = moment("2021-02-19T14:22:33-06:00").fromNow();
       el.innerHTML = fromNow;
     })();
@@ -433,12 +550,12 @@
     <div class="pure-u-1-5">
       <div class="yp-index-meta">
         <i class="fa fa-clock-o"></i>
-        <time datetime="2012-03-30T23:00:00-03:00" class="yp-index-meta__date"><span id="b6a81afa-7199-4a96-9329-aa59885ff99e">
+        <time datetime="2012-03-30T23:00:00-03:00" class="yp-index-meta__date"><span id="45f14c02-8853-4132-a183-bc265784bc6f">
 
   </span>
   <script>
     (function(){
-      var el = document.getElementById("b6a81afa-7199-4a96-9329-aa59885ff99e");
+      var el = document.getElementById("45f14c02-8853-4132-a183-bc265784bc6f");
       var fromNow = moment("2012-03-30T23:00:00-03:00").fromNow();
       el.innerHTML = fromNow;
     })();

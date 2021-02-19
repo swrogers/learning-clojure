@@ -197,6 +197,26 @@
 <pre class="code literal-block"><span class="p">(</span><span class="nb">conj </span><span class="o">'</span><span class="p">(</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
 </pre>
 <p>Lists are good for needing to add to the beginning of a sequence, otherwise use a vector.</p>
+<h4>Sets</h4>
+<p>Come in hash-sets and sorted-sets. Here's a hash-set:</p>
+<pre class="code literal-block"><span class="o">#</span><span class="p">{</span><span class="s">"string"</span> <span class="mi">5</span> <span class="ss">:key</span> <span class="s">"whatever"</span><span class="p">}</span>
+</pre>
+<p>And another, made with <code>hash-set</code>:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="nb">hash-set </span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span>
+</pre>
+<p>Keep in mind, that there are no duplicates in a hash set.</p>
+<p>Hash sets can be created with the <code>set</code> function as well, from existing vectors:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="nb">set </span><span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">])</span>
+</pre>
+<p>Use <code>contains?</code> to check for existance within the set:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="nb">contains? </span><span class="o">#</span><span class="p">{</span><span class="ss">:a</span> <span class="ss">:b</span> <span class="mi">0</span> <span class="mi">1</span> <span class="s">"string"</span><span class="p">}</span> <span class="ss">:b</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">contains? </span><span class="o">#</span><span class="p">{</span><span class="ss">:a</span> <span class="ss">:b</span> <span class="mi">0</span> <span class="mi">1</span> <span class="s">"string"</span><span class="p">}</span> <span class="ss">:not-gonna-find-me</span><span class="p">)</span>
+</pre>
+<p>Keywords work the same as in Maps:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="ss">:keyItem</span> <span class="o">#</span><span class="p">{</span><span class="ss">:keyItem</span> <span class="ss">:keyItemAnother</span><span class="p">})</span>
+</pre>
+<p>The above returns <code>:keyItem</code>. </p>
+<p>The <code>get</code> function works as expected, too.</p>
 </div>
     </article>
 </div>

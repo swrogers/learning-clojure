@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+      My Clojure Journey - Clojure and Functions
+    </title>
+<link rel="stylesheet" href="../../assets/css/bundle.css">
+<script src="../../assets/js/bundle.js"></script>
+</head>
+<body>
+    <div id="layout">
+      <a href="#menu" id="menuLink" class="menu-link">
+    <span></span>
+</a>
+
+<div id="menu">
+    <div class="pure-menu">
+        <a class="pure-menu-heading" href="../../">My Clojure Journey</a>
+
+        <ul class="pure-menu-list">
+<li class="pure-menu-item">
+              <a class="pure-menu-link" href="../../archive.html">Archive</a>
+            </li>
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="../../categories/">Tags</a>
+            </li>
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="../../rss.xml">RSS feed</a>
+            </li>
+
+
+          
+        </ul>
+</div>
+</div>
+
+      <div id="main">
+
+        
+          
+
+
+        <div class="yp-header-container">
+            <div class="yp-header" style="border-bottom: 1px solid #eee;">
+
+            <h1 class="yp-header__title">
+              Clojure and Functions
+            </h1>
+            <h2 class="yp-header__subtitle">
+              
+            </h2>
+            
+          </div>
+        </div>
+
+        <div class="yp-content">
+          
+
+
+
+
+
+
+
+
+<div class="pure-g">
+  <div class="pure-u-1">
+    <article class="yp-post__body"><div>
+<h3>Clojure and Functions</h3>
+<p>With basics covered, time to cover functions.</p>
+<p>Use <code>defn</code> to define one's own functions. Function definitions have five parts:</p>
+<ul>
+<li>
+<p>defn</p>
+</li>
+<li>
+<p>Function Name</p>
+</li>
+<li>
+<p>Optional - Docstring</p>
+</li>
+<li>
+<p>bracket of parameters</p>
+</li>
+<li>
+<p>function body</p>
+</li>
+</ul>
+<p>Example:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">function-name</span>
+    <span class="s">"This is an interesting function that does something nifty."</span>
+    <span class="p">[</span><span class="nv">parameter</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"Let's build a string! Your parameter was "</span> <span class="nv">parameter</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nf">function-name</span> <span class="s">"PARAMETER HERE!!"</span><span class="p">)</span>
+</pre>
+<h4>Arity and overloading</h4>
+<p>Functions have an <em>arity</em>, that is, how many parameters they take. Functions can be overloaded to run different forms depending on arity. Note that each function form is wrapped in its own paren set:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">overloaded-function</span>
+    <span class="c1">;; 3 arity</span>
+    <span class="p">([</span><span class="nv">one</span> <span class="nv">two</span> <span class="nv">three</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"one: "</span> <span class="nv">one</span> <span class="s">"two: "</span> <span class="nv">two</span> <span class="s">"three: "</span> <span class="nv">three</span><span class="p">))</span>
+    <span class="c1">;; 2 arity</span>
+    <span class="p">([</span><span class="nv">one</span> <span class="nv">two</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"one: "</span> <span class="nv">one</span> <span class="s">"two: "</span> <span class="nv">two</span><span class="p">))</span>
+    <span class="c1">;; 1 arity</span>
+    <span class="p">([</span><span class="nv">one</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"one: "</span> <span class="nv">one</span><span class="p">))</span>
+    <span class="c1">;; 0 arity</span>
+    <span class="p">([]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"no args here!"</span><span class="p">)))</span>
+</pre>
+<p>You can use the above as a method to provide default arguments, by calling the function from itself:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">i-have-default-second-arg</span>
+    <span class="s">"The second argument will have a default here..."</span>
+    <span class="p">([</span><span class="nv">arg1</span> <span class="nv">arg2</span><span class="p">]</span>
+        <span class="p">(</span><span class="nb">str </span><span class="s">"arg1: "</span> <span class="nv">arg1</span> <span class="s">"arg2: "</span> <span class="nv">arg2</span><span class="p">))</span>
+    <span class="p">([</span><span class="nv">arg1</span><span class="p">]</span>
+        <span class="p">(</span><span class="nf">i-have-default-second-arg</span> <span class="nv">arg1</span> <span class="s">"default"</span><span class="p">)))</span>
+</pre>
+<h4>The <code>Rest</code> parameter</h4>
+<p>Another way to define multi-arity functions is with the <em>rest</em> parameter: <code>&amp;</code>.  When this method is used, it says to place all the rest of the included parameters into the named list.</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">named-shopping-list</span>
+    <span class="s">"The first parameter will be the name of the list: list-name.</span>
+<span class="s">     The remaining parameters will be added to the list: shopping-list"</span>
+    <span class="p">[</span><span class="nv">list-name</span> <span class="o">&amp;</span> <span class="nv">shopping-list</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"List name: "</span> <span class="nv">list-name</span>
+        <span class="s">"List items: "</span> <span class="nv">shopping-list</span><span class="p">))</span>
+</pre>
+<h4>Destructuring</h4>
+<p>Another way to define parameters, binding names to items within the collection.</p>
+<p>This is done by passing the parameter list inside a vector.</p>
+</div>
+    </article>
+</div>
+</div>
+        </div>
+
+
+          <div class="yp-footer">
+    Contents © 2021         <a href="mailto:swrogers@gmail.com">Shane Rogers</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </div>
+
+      </div>
+    </div>
+
+    
+    
+  </body>
+</html>
