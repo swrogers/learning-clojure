@@ -39,11 +39,11 @@
  </sitemap>
  <sitemap>
   <loc>https://swrogers.github.io/learning-clojure/galleries/demo/rss.xml</loc>
-  <lastmod>2021-02-19T20:24:00Z</lastmod>
+  <lastmod>2021-02-19T20:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://swrogers.github.io/learning-clojure/galleries/rss.xml</loc>
-  <lastmod>2021-02-19T20:24:00Z</lastmod>
+  <lastmod>2021-02-19T20:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://swrogers.github.io/learning-clojure/rss.xml</loc>
@@ -51,6 +51,6 @@
  </sitemap>
  <sitemap>
   <loc>https://swrogers.github.io/learning-clojure/sitemap.xml</loc>
-  <lastmod>2021-02-19T20:24:00Z</lastmod>
+  <lastmod>2021-02-19T20:48:00Z</lastmod>
  </sitemap>
 </sitemapindex>
