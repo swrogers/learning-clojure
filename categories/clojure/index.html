@@ -71,12 +71,110 @@
     <div class="pure-u-1-5">
       <div class="yp-index-meta">
         <i class="fa fa-clock-o"></i>
-        <time datetime="2021-02-19T14:22:33-06:00" class="yp-index-meta__date"><span id="cdae2ee9-4736-4040-8638-bc5d9b3cbe81">
+        <time datetime="2021-02-19T16:03:12-06:00" class="yp-index-meta__date"><span id="cc1ebc50-b7ff-433a-96ca-23d07351fc6f">
 
   </span>
   <script>
     (function(){
-      var el = document.getElementById("cdae2ee9-4736-4040-8638-bc5d9b3cbe81");
+      var el = document.getElementById("cc1ebc50-b7ff-433a-96ca-23d07351fc6f");
+      var fromNow = moment("2021-02-19T16:03:12-06:00").fromNow();
+      el.innerHTML = fromNow;
+    })();
+  </script></time><div class="yp-index-meta__tags">
+            <span class="yp-index-meta__tag">clojure</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pure-u-4-5">
+      <article class="yp-index-post"><h2 class="yp-index-post__title">
+          <a href="../../posts/clojure-and-functions/" class="yp-index-post__link">
+            Clojure and Functions
+          </a>
+        </h2>
+        <h3 class="yp-index-post__subtitle">
+          
+        </h3>
+          <div class="yp-index-post__body">
+            <div>
+<h3>Clojure and Functions</h3>
+<p>With basics covered, time to cover functions.</p>
+<p>Use <code>defn</code> to define one's own functions. Function definitions have five parts:</p>
+<ul>
+<li>
+<p>defn</p>
+</li>
+<li>
+<p>Function Name</p>
+</li>
+<li>
+<p>Optional - Docstring</p>
+</li>
+<li>
+<p>bracket of parameters</p>
+</li>
+<li>
+<p>function body</p>
+</li>
+</ul>
+<p>Example:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">function-name</span>
+    <span class="s">"This is an interesting function that does something nifty."</span>
+    <span class="p">[</span><span class="nv">parameter</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"Let's build a string! Your parameter was "</span> <span class="nv">parameter</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nf">function-name</span> <span class="s">"PARAMETER HERE!!"</span><span class="p">)</span>
+</pre>
+<h4>Arity and overloading</h4>
+<p>Functions have an <em>arity</em>, that is, how many parameters they take. Functions can be overloaded to run different forms depending on arity. Note that each function form is wrapped in its own paren set:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">overloaded-function</span>
+    <span class="c1">;; 3 arity</span>
+    <span class="p">([</span><span class="nv">one</span> <span class="nv">two</span> <span class="nv">three</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"one: "</span> <span class="nv">one</span> <span class="s">"two: "</span> <span class="nv">two</span> <span class="s">"three: "</span> <span class="nv">three</span><span class="p">))</span>
+    <span class="c1">;; 2 arity</span>
+    <span class="p">([</span><span class="nv">one</span> <span class="nv">two</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"one: "</span> <span class="nv">one</span> <span class="s">"two: "</span> <span class="nv">two</span><span class="p">))</span>
+    <span class="c1">;; 1 arity</span>
+    <span class="p">([</span><span class="nv">one</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"one: "</span> <span class="nv">one</span><span class="p">))</span>
+    <span class="c1">;; 0 arity</span>
+    <span class="p">([]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"no args here!"</span><span class="p">)))</span>
+</pre>
+<p>You can use the above as a method to provide default arguments, by calling the function from itself:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">i-have-default-second-arg</span>
+    <span class="s">"The second argument will have a default here..."</span>
+    <span class="p">([</span><span class="nv">arg1</span> <span class="nv">arg2</span><span class="p">]</span>
+        <span class="p">(</span><span class="nb">str </span><span class="s">"arg1: "</span> <span class="nv">arg1</span> <span class="s">"arg2: "</span> <span class="nv">arg2</span><span class="p">))</span>
+    <span class="p">([</span><span class="nv">arg1</span><span class="p">]</span>
+        <span class="p">(</span><span class="nf">i-have-default-second-arg</span> <span class="nv">arg1</span> <span class="s">"default"</span><span class="p">)))</span>
+</pre>
+<h4>The <code>Rest</code> parameter</h4>
+<p>Another way to define multi-arity functions is with the <em>rest</em> parameter: <code>&amp;</code>.  When this method is used, it says to place all the rest of the included parameters into the named list.</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">named-shopping-list</span>
+    <span class="s">"The first parameter will be the name of the list: list-name.</span>
+<span class="s">     The remaining parameters will be added to the list: shopping-list"</span>
+    <span class="p">[</span><span class="nv">list-name</span> <span class="o">&amp;</span> <span class="nv">shopping-list</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">"List name: "</span> <span class="nv">list-name</span>
+        <span class="s">"List items: "</span> <span class="nv">shopping-list</span><span class="p">))</span>
+</pre>
+<h4>Destructuring</h4>
+<p>Another way to define parameters, binding names to items within the collection.</p>
+<p>This is done by passing the parameter list inside a vector.</p>
+</div>
+          </div>
+      </article>
+</div>
+
+    <div class="pure-u-1-5">
+      <div class="yp-index-meta">
+        <i class="fa fa-clock-o"></i>
+        <time datetime="2021-02-19T14:22:33-06:00" class="yp-index-meta__date"><span id="762f2f67-6fac-49ce-8f7a-ed526536b4dc">
+
+  </span>
+  <script>
+    (function(){
+      var el = document.getElementById("762f2f67-6fac-49ce-8f7a-ed526536b4dc");
       var fromNow = moment("2021-02-19T14:22:33-06:00").fromNow();
       el.innerHTML = fromNow;
     })();
