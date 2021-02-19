@@ -2,7 +2,7 @@
 .. title: Clojure and Functions
 .. slug: clojure-and-functions
 .. date: 2021-02-19 16:03:12 UTC-06:00
-.. tags: 
+.. tags: clojure 
 .. category: 
 .. link: 
 .. description: 
