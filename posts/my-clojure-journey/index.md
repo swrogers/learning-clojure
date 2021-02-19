@@ -63,37 +63,37 @@ One thing that I have been doing over the past few months, is building up [my Em
 
 Here is a handy table of Emacs keys that one might find useful from this page
 
-| Command | Keyboard shortcut | Function name |
-| --- | --- | --- |
-| Create buffer | <kbd>C</kbd>-<kbd>x</kbd> <kbd>b</kbd> | `switch-to-buffer` |
-| Kill buffer | <kbd>C</kbd>-<kbd>x</kbd> <kbd>k</kbd> |     |
-| Visit file | <kbd>C</kbd>-<kbd>x</kbd> <kbd>C</kbd>-<kbd>f</kbd> |     |
-| Save file | <kbd>C</kbd>-<kbd>x</kbd> <kbd>C</kbd>-<kbd>s</kbd> | `save-file` |
-| Kill line | <kbd>C</kbd>-<kbd>k</kbd> |     |
-| Undo | <kbd>C</kbd>-<kbd>/</kbd> |     |
+| Command       | Keyboard shortcut                                   | Function name      |
+| ------------- | --------------------------------------------------- | ------------------ |
+| Create buffer | <kbd>C</kbd>-<kbd>x</kbd> <kbd>b</kbd>              | `switch-to-buffer` |
+| Kill buffer   | <kbd>C</kbd>-<kbd>x</kbd> <kbd>k</kbd>              |                    |
+| Visit file    | <kbd>C</kbd>-<kbd>x</kbd> <kbd>C</kbd>-<kbd>f</kbd> |                    |
+| Save file     | <kbd>C</kbd>-<kbd>x</kbd> <kbd>C</kbd>-<kbd>s</kbd> | `save-file`        |
+| Kill line     | <kbd>C</kbd>-<kbd>k</kbd>                           |                    |
+| Undo          | <kbd>C</kbd>-<kbd>/</kbd>                           |                    |
 
 ## CIDER Keyboard Reference
 
-| Command | Keyboard shortcut | Function name |
-| --- | --- | --- |
-| Eval last expression | <kbd>C-x C-e</kbd> | cider-eval-last-expression |
-| Set namespace | <kbd>C-c M-n M-n</kbd> |     |
-| Compile buffer | <kbd>C-c C-k</kbd> |     |
-| Cycle REPL history | <kbd>C-[UP]</kbd> or <kbd>C-[DOWN]</kbd> |     |
-| Display Documentation for symbol at point | <kbd>C-c C-d C-d</kbd> |     |
-| Navigate to source for symbol at point | <kbd>M-.</kbd> |     |
-| Navigate back to original buffer and position | <kbd>M-,</kbd> |     |
-| Search for arbitrary text across function names and documentation | <kbd>C-c C-d C-a</kbd> |     |
+| Command                                                           | Keyboard shortcut                        | Function name              |
+| ----------------------------------------------------------------- | ---------------------------------------- | -------------------------- |
+| Eval last expression                                              | <kbd>C-x C-e</kbd>                       | cider-eval-last-expression |
+| Set namespace                                                     | <kbd>C-c M-n M-n</kbd>                   |                            |
+| Compile buffer                                                    | <kbd>C-c C-k</kbd>                       |                            |
+| Cycle REPL history                                                | <kbd>C-[UP]</kbd> or <kbd>C-[DOWN]</kbd> |                            |
+| Display Documentation for symbol at point                         | <kbd>C-c C-d C-d</kbd>                   |                            |
+| Navigate to source for symbol at point                            | <kbd>M-.</kbd>                           |                            |
+| Navigate back to original buffer and position                     | <kbd>M-,</kbd>                           |                            |
+| Search for arbitrary text across function names and documentation | <kbd>C-c C-d C-a</kbd>                   |                            |
 
 ## Paredit Keyboard Reference
 
-| Command | Keyboard shortcut | Function name |
-| --- | --- | --- |
-| Wrap | <kbd>M-(</kbd> |     |
-| Slurp | <kbd>C-[RIGHT]</kbd> |     |
-| Barf | <kbd>C-[LEFT]</kbd> |     |
-| Move to closing parens | <kbd>C-M-f</kbd> |     |
-| Move to opening parens | <kbd>C-M-b</kbd> |     |
+| Command                | Keyboard shortcut    | Function name |
+| ---------------------- | -------------------- | ------------- |
+| Wrap                   | <kbd>M-(</kbd>       |               |
+| Slurp                  | <kbd>C-[RIGHT]</kbd> |               |
+| Barf                   | <kbd>C-[LEFT]</kbd>  |               |
+| Move to closing parens | <kbd>C-M-f</kbd>     |               |
+| Move to opening parens | <kbd>C-M-b</kbd>     |               |
 
 ## Now to actually start learning the language
 

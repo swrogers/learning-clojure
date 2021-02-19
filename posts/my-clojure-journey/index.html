@@ -79,22 +79,18 @@
 <h3>Creating new clojure projects</h3>
 <p>New clojure projects can be created with the <a href="http://leiningen.org/">Leiningen</a> command line application. Installation is pretty straightforward for us Linux users. It's kind of a given, I would assume, that since clojure runs on the JVM that you would already have a Java Runtime installed.</p>
 <p>New clojure projects are created by:</p>
-<pre class="code literal-block"><span></span><code>lein new app &lt;name-of-project&gt;
-</code></pre>
-
+<pre class="code literal-block">lein new app &lt;name-of-project&gt;
+</pre>
 <p>Lein can also be used to run your project, first navigate into the newly created directory and...</p>
-<pre class="code literal-block"><span></span><code><span class="nb">cd</span> &lt;name-of-project&gt; <span class="o">&amp;&amp;</span> lein run
-</code></pre>
-
+<pre class="code literal-block"><span class="nb">cd</span> &lt;name-of-project&gt; <span class="o">&amp;&amp;</span> lein run
+</pre>
 <p>Lein can create distributables...</p>
-<pre class="code literal-block"><span></span><code>lein uberjar
-</code></pre>
-
+<pre class="code literal-block">lein uberjar
+</pre>
 <p>The above creates the <em>target/uberjar/<name-of-project-with-release-data>-standalone.jar</name-of-project-with-release-data></em> file.</p>
 <p>Lein can be used to access a REPL:</p>
-<pre class="code literal-block"><span></span><code>lein repl
-</code></pre>
-
+<pre class="code literal-block">lein repl
+</pre>
 <p>Of course, you'll most likely want to use an actual editor, which brings us to....Emacs.</p>
 <h2>Emacs - The Ultimate Clojure Editor</h2>
 <p>If I'm being honestly frank, and it's more like honestly Shane...but whatever....the reason I wanted to pick up a LISP is because I've been wanting to get more in depth into Emacs. Since Emacs is basically a LISP machine, it helps to have some knowledge of LISP in order to use Emacs to its fullest. That, and who knows, maybe learning Clojure can help with future employment prospects, self taught or not.</p>

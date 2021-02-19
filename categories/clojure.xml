@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Clojure Journey (Posts about clojure)</title><link>https://swrogers.github.io/learning-clojure/</link><description></description><atom:link href="https://swrogers.github.io/learning-clojure/categories/clojure.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:swrogers@gmail.com"&gt;Shane Rogers&lt;/a&gt; </copyright><lastBuildDate>Fri, 19 Feb 2021 20:24:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>My Clojure Journey</title><link>https://swrogers.github.io/learning-clojure/posts/my-clojure-journey/</link><dc:creator>Shane Rogers</dc:creator><description>&lt;div&gt;&lt;h2&gt;My Clojure Journey&lt;/h2&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Clojure Journey (Posts about clojure)</title><link>https://swrogers.github.io/learning-clojure/</link><description></description><atom:link href="https://swrogers.github.io/learning-clojure/categories/clojure.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:swrogers@gmail.com"&gt;Shane Rogers&lt;/a&gt; </copyright><lastBuildDate>Fri, 19 Feb 2021 21:36:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>My Clojure Journey</title><link>https://swrogers.github.io/learning-clojure/posts/my-clojure-journey/</link><dc:creator>Shane Rogers</dc:creator><description>&lt;div&gt;&lt;h2&gt;My Clojure Journey&lt;/h2&gt;
 &lt;p&gt;Welcome to my little journey on attempting to learn Clojure!&lt;/p&gt;
 &lt;p&gt;This is going to be the place where, once the day has come to wind down, I'll recap everything that I've learned during the day. The hope is, that upon doing so it will help to cement things into my long term memory and actually be able to use the language.&lt;/p&gt;
 &lt;h2&gt;The First Steps&lt;/h2&gt;
@@ -8,22 +8,18 @@
 &lt;h3&gt;Creating new clojure projects&lt;/h3&gt;
 &lt;p&gt;New clojure projects can be created with the &lt;a href="http://leiningen.org/"&gt;Leiningen&lt;/a&gt; command line application. Installation is pretty straightforward for us Linux users. It's kind of a given, I would assume, that since clojure runs on the JVM that you would already have a Java Runtime installed.&lt;/p&gt;
 &lt;p&gt;New clojure projects are created by:&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lein new app &amp;lt;name-of-project&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre class="code literal-block"&gt;lein new app &amp;lt;name-of-project&amp;gt;
+&lt;/pre&gt;
 &lt;p&gt;Lein can also be used to run your project, first navigate into the newly created directory and...&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;name-of-project&amp;gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; lein run
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre class="code literal-block"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;name-of-project&amp;gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; lein run
+&lt;/pre&gt;
 &lt;p&gt;Lein can create distributables...&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lein uberjar
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre class="code literal-block"&gt;lein uberjar
+&lt;/pre&gt;
 &lt;p&gt;The above creates the &lt;em&gt;target/uberjar/&lt;name-of-project-with-release-data&gt;-standalone.jar&lt;/name-of-project-with-release-data&gt;&lt;/em&gt; file.&lt;/p&gt;
 &lt;p&gt;Lein can be used to access a REPL:&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lein repl
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre class="code literal-block"&gt;lein repl
+&lt;/pre&gt;
 &lt;p&gt;Of course, you'll most likely want to use an actual editor, which brings us to....Emacs.&lt;/p&gt;
 &lt;h2&gt;Emacs - The Ultimate Clojure Editor&lt;/h2&gt;
 &lt;p&gt;If I'm being honestly frank, and it's more like honestly Shane...but whatever....the reason I wanted to pick up a LISP is because I've been wanting to get more in depth into Emacs. Since Emacs is basically a LISP machine, it helps to have some knowledge of LISP in order to use Emacs to its fullest. That, and who knows, maybe learning Clojure can help with future employment prospects, self taught or not.&lt;/p&gt;

@@ -11,7 +11,7 @@
  </sitemap>
  <sitemap>
   <loc>https://swrogers.github.io/learning-clojure/authors/shane-rogers.xml</loc>
-  <lastmod>2021-02-19T20:24:00Z</lastmod>
+  <lastmod>2021-02-19T21:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://swrogers.github.io/learning-clojure/categories/blog.xml</loc>
@@ -23,7 +23,7 @@
  </sitemap>
  <sitemap>
   <loc>https://swrogers.github.io/learning-clojure/categories/clojure.xml</loc>
-  <lastmod>2021-02-19T20:24:00Z</lastmod>
+  <lastmod>2021-02-19T21:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://swrogers.github.io/learning-clojure/categories/demo.xml</loc>
@@ -47,10 +47,10 @@
  </sitemap>
  <sitemap>
   <loc>https://swrogers.github.io/learning-clojure/rss.xml</loc>
-  <lastmod>2021-02-19T20:24:00Z</lastmod>
+  <lastmod>2021-02-19T21:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://swrogers.github.io/learning-clojure/sitemap.xml</loc>
-  <lastmod>2021-02-19T20:48:00Z</lastmod>
+  <lastmod>2021-02-19T21:36:00Z</lastmod>
  </sitemap>
 </sitemapindex>

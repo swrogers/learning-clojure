@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://swrogers.github.io/learning-clojure/archive.html</loc>
-  <lastmod>2021-02-19T20:48:00Z</lastmod>
+  <lastmod>2021-02-19T21:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://swrogers.github.io/learning-clojure/authors/</loc>
@@ -136,6 +136,10 @@
  <url>
   <loc>https://swrogers.github.io/learning-clojure/posts/my-clojure-journey/</loc>
   <lastmod>2021-02-19T20:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://swrogers.github.io/learning-clojure/posts/next-steps-with-clojure/</loc>
+  <lastmod>2021-02-19T21:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://swrogers.github.io/learning-clojure/posts/welcome-to-nikola/</loc>

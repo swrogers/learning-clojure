@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>
-      My Clojure Journey
+      My Clojure Journey - Next Steps With Clojure
     </title>
-<link rel="stylesheet" href="assets/css/bundle.css">
-<script src="assets/js/bundle.js"></script>
+<link rel="stylesheet" href="../../assets/css/bundle.css">
+<script src="../../assets/js/bundle.js"></script>
 </head>
 <body>
     <div id="layout">
@@ -18,17 +18,17 @@
 
 <div id="menu">
     <div class="pure-menu">
-        <a class="pure-menu-heading" href=".">My Clojure Journey</a>
+        <a class="pure-menu-heading" href="../../">My Clojure Journey</a>
 
         <ul class="pure-menu-list">
 <li class="pure-menu-item">
-              <a class="pure-menu-link" href="archive.html">Archive</a>
+              <a class="pure-menu-link" href="../../archive.html">Archive</a>
             </li>
             <li class="pure-menu-item">
-              <a class="pure-menu-link" href="categories/">Tags</a>
+              <a class="pure-menu-link" href="../../categories/">Tags</a>
             </li>
             <li class="pure-menu-item">
-              <a class="pure-menu-link" href="rss.xml">RSS feed</a>
+              <a class="pure-menu-link" href="../../rss.xml">RSS feed</a>
             </li>
 
 
@@ -40,14 +40,14 @@
       <div id="main">
 
         
-
           
+
 
         <div class="yp-header-container">
             <div class="yp-header" style="border-bottom: 1px solid #eee;">
 
             <h1 class="yp-header__title">
-              My Clojure Journey
+              Next Steps With Clojure
             </h1>
             <h2 class="yp-header__subtitle">
               
@@ -67,35 +67,8 @@
 
 
 <div class="pure-g">
-
-    <div class="pure-u-1-5">
-      <div class="yp-index-meta">
-        <i class="fa fa-clock-o"></i>
-        <time datetime="2021-02-19T15:14:51-06:00" class="yp-index-meta__date"><span id="365250d2-ba87-4052-b8bf-bd7414bc0fec">
-
-  </span>
-  <script>
-    (function(){
-      var el = document.getElementById("365250d2-ba87-4052-b8bf-bd7414bc0fec");
-      var fromNow = moment("2021-02-19T15:14:51-06:00").fromNow();
-      el.innerHTML = fromNow;
-    })();
-  </script></time><div class="yp-index-meta__tags">
-        </div>
-      </div>
-    </div>
-
-    <div class="pure-u-4-5">
-      <article class="yp-index-post"><h2 class="yp-index-post__title">
-          <a href="posts/next-steps-with-clojure/" class="yp-index-post__link">
-            Next Steps With Clojure
-          </a>
-        </h2>
-        <h3 class="yp-index-post__subtitle">
-          
-        </h3>
-          <div class="yp-index-post__body">
-            <div>
+  <div class="pure-u-1">
+    <article class="yp-post__body"><div>
 <h2>Continuing the Clojure Journey</h2>
 <h3>Forms</h3>
 <p>LISP, and clojure, code is basically data. Valid code is referred to as a <code>form</code>.</p>
@@ -225,260 +198,7 @@
 </pre>
 <p>Lists are good for needing to add to the beginning of a sequence, otherwise use a vector.</p>
 </div>
-          </div>
-      </article>
-</div>
-
-    <div class="pure-u-1-5">
-      <div class="yp-index-meta">
-        <i class="fa fa-clock-o"></i>
-        <time datetime="2021-02-19T14:22:33-06:00" class="yp-index-meta__date"><span id="f9ceefbc-ceb3-4b06-be95-3fffaf16c1e8">
-
-  </span>
-  <script>
-    (function(){
-      var el = document.getElementById("f9ceefbc-ceb3-4b06-be95-3fffaf16c1e8");
-      var fromNow = moment("2021-02-19T14:22:33-06:00").fromNow();
-      el.innerHTML = fromNow;
-    })();
-  </script></time><div class="yp-index-meta__tags">
-            <span class="yp-index-meta__tag">clojure</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pure-u-4-5">
-      <article class="yp-index-post"><h2 class="yp-index-post__title">
-          <a href="posts/my-clojure-journey/" class="yp-index-post__link">
-            My Clojure Journey
-          </a>
-        </h2>
-        <h3 class="yp-index-post__subtitle">
-          
-        </h3>
-          <div class="yp-index-post__body">
-            <div>
-<h2>My Clojure Journey</h2>
-<p>Welcome to my little journey on attempting to learn Clojure!</p>
-<p>This is going to be the place where, once the day has come to wind down, I'll recap everything that I've learned during the day. The hope is, that upon doing so it will help to cement things into my long term memory and actually be able to use the language.</p>
-<h2>The First Steps</h2>
-<p>Since I've already been at this for a couple of days, I figure that now is as good a time as any to recap things for myself. The idea here is that as I travel through the braveclojure.com site, at the end of each day I'll write up what it was that I learned as an attempt to try to keep things fresh and retained.</p>
-<p>We'll see how this goes.</p>
-<h3>Creating new clojure projects</h3>
-<p>New clojure projects can be created with the <a href="http://leiningen.org/">Leiningen</a> command line application. Installation is pretty straightforward for us Linux users. It's kind of a given, I would assume, that since clojure runs on the JVM that you would already have a Java Runtime installed.</p>
-<p>New clojure projects are created by:</p>
-<pre class="code literal-block">lein new app &lt;name-of-project&gt;
-</pre>
-<p>Lein can also be used to run your project, first navigate into the newly created directory and...</p>
-<pre class="code literal-block"><span class="nb">cd</span> &lt;name-of-project&gt; <span class="o">&amp;&amp;</span> lein run
-</pre>
-<p>Lein can create distributables...</p>
-<pre class="code literal-block">lein uberjar
-</pre>
-<p>The above creates the <em>target/uberjar/<name-of-project-with-release-data>-standalone.jar</name-of-project-with-release-data></em> file.</p>
-<p>Lein can be used to access a REPL:</p>
-<pre class="code literal-block">lein repl
-</pre>
-<p>Of course, you'll most likely want to use an actual editor, which brings us to....Emacs.</p>
-<h2>Emacs - The Ultimate Clojure Editor</h2>
-<p>If I'm being honestly frank, and it's more like honestly Shane...but whatever....the reason I wanted to pick up a LISP is because I've been wanting to get more in depth into Emacs. Since Emacs is basically a LISP machine, it helps to have some knowledge of LISP in order to use Emacs to its fullest. That, and who knows, maybe learning Clojure can help with future employment prospects, self taught or not.</p>
-<p>One thing that I have been doing over the past few months, is building up <a href="https://gitlab.swrgroups.net/swrogers/dot-emacs-config">my Emacs config</a> from scratch using Org mode. Which is, in and of itself, quite a time consuming beast. For Clojure, I've been using a handful of handy packages.</p>
-<h3>Emacs Keyboard References</h3>
-<p>Here is a handy table of Emacs keys that one might find useful from this page</p>
-<table>
-<thead><tr>
-<th>Command</th>
-<th>Keyboard shortcut</th>
-<th>Function name</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Create buffer</td>
-<td>
-<kbd>C</kbd>-<kbd>x</kbd> <kbd>b</kbd>
-</td>
-<td><code>switch-to-buffer</code></td>
-</tr>
-<tr>
-<td>Kill buffer</td>
-<td>
-<kbd>C</kbd>-<kbd>x</kbd> <kbd>k</kbd>
-</td>
-<td></td>
-</tr>
-<tr>
-<td>Visit file</td>
-<td>
-<kbd>C</kbd>-<kbd>x</kbd> <kbd>C</kbd>-<kbd>f</kbd>
-</td>
-<td></td>
-</tr>
-<tr>
-<td>Save file</td>
-<td>
-<kbd>C</kbd>-<kbd>x</kbd> <kbd>C</kbd>-<kbd>s</kbd>
-</td>
-<td><code>save-file</code></td>
-</tr>
-<tr>
-<td>Kill line</td>
-<td>
-<kbd>C</kbd>-<kbd>k</kbd>
-</td>
-<td></td>
-</tr>
-<tr>
-<td>Undo</td>
-<td>
-<kbd>C</kbd>-<kbd>/</kbd>
-</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3>CIDER Keyboard Reference</h3>
-<table>
-<thead><tr>
-<th>Command</th>
-<th>Keyboard shortcut</th>
-<th>Function name</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Eval last expression</td>
-<td><kbd>C-x C-e</kbd></td>
-<td>cider-eval-last-expression</td>
-</tr>
-<tr>
-<td>Set namespace</td>
-<td><kbd>C-c M-n M-n</kbd></td>
-<td></td>
-</tr>
-<tr>
-<td>Compile buffer</td>
-<td><kbd>C-c C-k</kbd></td>
-<td></td>
-</tr>
-<tr>
-<td>Cycle REPL history</td>
-<td>
-<kbd>C-[UP]</kbd> or <kbd>C-[DOWN]</kbd>
-</td>
-<td></td>
-</tr>
-<tr>
-<td>Display Documentation for symbol at point</td>
-<td><kbd>C-c C-d C-d</kbd></td>
-<td></td>
-</tr>
-<tr>
-<td>Navigate to source for symbol at point</td>
-<td><kbd>M-.</kbd></td>
-<td></td>
-</tr>
-<tr>
-<td>Navigate back to original buffer and position</td>
-<td><kbd>M-,</kbd></td>
-<td></td>
-</tr>
-<tr>
-<td>Search for arbitrary text across function names and documentation</td>
-<td><kbd>C-c C-d C-a</kbd></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3>Paredit Keyboard Reference</h3>
-<table>
-<thead><tr>
-<th>Command</th>
-<th>Keyboard shortcut</th>
-<th>Function name</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Wrap</td>
-<td><kbd>M-(</kbd></td>
-<td></td>
-</tr>
-<tr>
-<td>Slurp</td>
-<td><kbd>C-[RIGHT]</kbd></td>
-<td></td>
-</tr>
-<tr>
-<td>Barf</td>
-<td><kbd>C-[LEFT]</kbd></td>
-<td></td>
-</tr>
-<tr>
-<td>Move to closing parens</td>
-<td><kbd>C-M-f</kbd></td>
-<td></td>
-</tr>
-<tr>
-<td>Move to opening parens</td>
-<td><kbd>C-M-b</kbd></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3>Now to actually start learning the language</h3>
-<p>Hopefully that makes some sense, now it's on to starting to learn things...</p>
-</div>
-          </div>
-      </article>
-</div>
-
-    <div class="pure-u-1-5">
-      <div class="yp-index-meta">
-        <i class="fa fa-clock-o"></i>
-        <time datetime="2012-03-30T23:00:00-03:00" class="yp-index-meta__date"><span id="b6a81afa-7199-4a96-9329-aa59885ff99e">
-
-  </span>
-  <script>
-    (function(){
-      var el = document.getElementById("b6a81afa-7199-4a96-9329-aa59885ff99e");
-      var fromNow = moment("2012-03-30T23:00:00-03:00").fromNow();
-      el.innerHTML = fromNow;
-    })();
-  </script></time><div class="yp-index-meta__tags">
-            <span class="yp-index-meta__tag">blog</span>
-            <span class="yp-index-meta__tag">demo</span>
-            <span class="yp-index-meta__tag">nikola</span>
-            <span class="yp-index-meta__tag">python</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pure-u-4-5">
-      <article class="yp-index-post"><h2 class="yp-index-post__title">
-          <a href="posts/welcome-to-nikola/" class="yp-index-post__link">
-            Welcome to Nikola
-          </a>
-        </h2>
-        <h3 class="yp-index-post__subtitle">
-          
-        </h3>
-          <div class="yp-index-post__body">
-            <div>
-<div class="figure">
-<a class="reference external image-reference" href="https://farm1.staticflickr.com/138/352972944_4f9d568680_z.jpg?zz=1"><img alt="Nikola Tesla Corner by nicwest, on Flickr" class="thumbnail" src="https://farm1.staticflickr.com/138/352972944_4f9d568680.jpg"></a>
-</div>
-<p>If you can see this in a web browser, it means you managed to install Nikola,
-and build a site using it. Congratulations!</p>
-<p>Next steps:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="pages/handbook/">Read the manual</a></p></li>
-<li><p><a class="reference external" href="https://getnikola.com">Visit the Nikola website to learn more</a></p></li>
-<li><p><a class="reference external" href="galleries/demo/">See a demo photo gallery</a></p></li>
-<li><p><a class="reference external" href="pages/listings-demo/">See a demo listing</a></p></li>
-<li><p><a class="reference external" href="pages/dr-nikolas-vendetta/">See a demo of a longer text</a></p></li>
-</ul>
-<p>Send feedback to <a class="reference external" href="mailto:info@getnikola.com">info@getnikola.com</a>!</p>
-</div>
-          </div>
-      </article>
+    </article>
 </div>
 </div>
         </div>
