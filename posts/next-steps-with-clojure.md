@@ -238,3 +238,42 @@ To swap things up for a change, the `conj` function adds to the _beginning_ of l
 ```
 
 Lists are good for needing to add to the beginning of a sequence, otherwise use a vector.
+
+### Sets
+
+Come in hash-sets and sorted-sets. Here's a hash-set:
+
+```clojure
+#{"string" 5 :key "whatever"}
+```
+
+And another, made with `hash-set`:
+
+```clojure
+(hash-set 1 2 3 4)
+```
+
+Keep in mind, that there are no duplicates in a hash set.
+
+Hash sets can be created with the `set` function as well, from existing vectors:
+
+```clojure
+(set [0 1 3 4])
+```
+
+Use `contains?` to check for existance within the set:
+
+```clojure
+(contains? #{:a :b 0 1 "string"} :b)
+(contains? #{:a :b 0 1 "string"} :not-gonna-find-me)
+```
+
+Keywords work the same as in Maps:
+
+```clojure
+(:keyItem #{:keyItem :keyItemAnother})
+```
+
+The above returns `:keyItem`. 
+
+The `get` function works as expected, too.
