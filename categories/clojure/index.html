@@ -71,12 +71,12 @@
     <div class="pure-u-1-5">
       <div class="yp-index-meta">
         <i class="fa fa-clock-o"></i>
-        <time datetime="2021-02-19T16:03:12-06:00" class="yp-index-meta__date"><span id="cc1ebc50-b7ff-433a-96ca-23d07351fc6f">
+        <time datetime="2021-02-19T16:03:12-06:00" class="yp-index-meta__date"><span id="8de6f2f9-1c0e-4b5a-b7d4-b121f11366c5">
 
   </span>
   <script>
     (function(){
-      var el = document.getElementById("cc1ebc50-b7ff-433a-96ca-23d07351fc6f");
+      var el = document.getElementById("8de6f2f9-1c0e-4b5a-b7d4-b121f11366c5");
       var fromNow = moment("2021-02-19T16:03:12-06:00").fromNow();
       el.innerHTML = fromNow;
     })();
@@ -160,7 +160,51 @@
 </pre>
 <h4>Destructuring</h4>
 <p>Another way to define parameters, binding names to items within the collection.</p>
-<p>This is done by passing the parameter list inside a vector.</p>
+<p>This is done by passing the parameter list inside a vector. Lists, vectors and maps can be destructured.</p>
+<pre class="code literal-block"><span class="p">(</span><span class="kd">defn </span><span class="nv">simple-destruct</span>
+    <span class="s">"just grab the first thing from the passed in list"</span>
+    <span class="p">[[</span><span class="nv">first-thing</span><span class="p">]]</span>
+    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">"The first thing was "</span> <span class="nv">first-thing</span><span class="p">)))</span>
+
+
+<span class="p">(</span><span class="k">def </span><span class="nv">map-destruct</span>
+    <span class="p">[{</span><span class="nv">keyOne</span> <span class="ss">:keyOne</span> <span class="nv">keyTwo</span> <span class="ss">:keyTwo</span><span class="p">}]</span>
+    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">"One: "</span> <span class="nv">keyOne</span><span class="p">))</span>
+    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">"Two: "</span> <span class="nv">keyTwo</span><span class="p">)))</span>
+</pre>
+<p>A shorter, simpler way to break out keywords of a map for parameters would be...</p>
+<pre class="code literal-block"><span class="p">(</span><span class="k">def </span><span class="nv">map-destruct</span>
+    <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">keyOne</span> <span class="nv">keyTwo</span><span class="p">]}]</span>
+    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">"One: "</span> <span class="nv">keyOne</span><span class="p">))</span>
+    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">"Two: "</span> <span class="nv">keyTwo</span><span class="p">)))</span>
+</pre>
+<p>The <code>:as</code> keyword saves access to the original map argument:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="k">def </span><span class="nv">map-destruct</span>
+    <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">keyOne</span> <span class="nv">keyTwo</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">parm-map</span><span class="p">}]</span>
+    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">"One: "</span> <span class="nv">keyOne</span><span class="p">))</span>
+    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">"Two: "</span> <span class="nv">keyTwo</span><span class="p">)))</span>
+</pre>
+<h4>Anonymous Functions</h4>
+<p>Functions that don't have names are <em>anonymous functions</em>.</p>
+<pre class="code literal-block"><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">parameters</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">"I don't do anything with these: "</span> <span class="nv">parameters</span><span class="p">)))</span>
+</pre>
+<p>You could do this, if you wanted:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="k">def </span><span class="nv">named-function-from-anonymous</span> 
+    <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">parm</span><span class="p">]</span> 
+<span class="p">(</span><span class="nb">str </span><span class="s">"This is the parm "</span> <span class="nv">parm</span><span class="p">)))</span>
+</pre>
+<p>Here we have a more compact way to define anonymous functions:</p>
+<pre class="code literal-block"><span class="o">#</span><span class="p">(</span><span class="nb">* </span><span class="nv">%</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1">;; the above function, applied...</span>
+<span class="p">(</span><span class="o">#</span><span class="p">(</span><span class="nb">* </span><span class="nv">%</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1">; =&gt; 6</span>
+</pre>
+<p>...another example:</p>
+<pre class="code literal-block"><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">str </span><span class="s">"Hi, "</span> <span class="nv">%</span><span class="p">)</span>
+    <span class="p">[</span><span class="s">"name one"</span> <span class="s">"name two"</span> <span class="s">"name three"</span><span class="p">])</span>
+</pre>
+<p>The <code>#</code> turns the function into an anonymous function, the <code>%</code> serves as a placeholder for any argument. If you need more than one argument, then just increment them: <code>%1</code>, <code>%2</code>, <code>%3</code>, and on. If you want to use a <em>rest</em> item, then use <code>%&amp;</code>, as expected.</p>
 </div>
           </div>
       </article>
@@ -169,12 +213,12 @@
     <div class="pure-u-1-5">
       <div class="yp-index-meta">
         <i class="fa fa-clock-o"></i>
-        <time datetime="2021-02-19T14:22:33-06:00" class="yp-index-meta__date"><span id="762f2f67-6fac-49ce-8f7a-ed526536b4dc">
+        <time datetime="2021-02-19T14:22:33-06:00" class="yp-index-meta__date"><span id="edef944c-9bb9-4e5c-aef1-9bd68e20e8ad">
 
   </span>
   <script>
     (function(){
-      var el = document.getElementById("762f2f67-6fac-49ce-8f7a-ed526536b4dc");
+      var el = document.getElementById("edef944c-9bb9-4e5c-aef1-9bd68e20e8ad");
       var fromNow = moment("2021-02-19T14:22:33-06:00").fromNow();
       el.innerHTML = fromNow;
     })();

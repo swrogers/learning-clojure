@@ -84,4 +84,70 @@ Another way to define multi-arity functions is with the _rest_ parameter: `&`.  
 
 Another way to define parameters, binding names to items within the collection.
 
-This is done by passing the parameter list inside a vector.
+This is done by passing the parameter list inside a vector. Lists, vectors and maps can be destructured.
+
+```clojure
+(defn simple-destruct
+    "just grab the first thing from the passed in list"
+    [[first-thing]]
+    (println (str "The first thing was " first-thing)))
+
+
+(def map-destruct
+    [{keyOne :keyOne keyTwo :keyTwo}]
+    (println (str "One: " keyOne))
+    (println (str "Two: " keyTwo)))
+```
+
+A shorter, simpler way to break out keywords of a map for parameters would be...
+
+```clojure
+(def map-destruct
+    [{:keys [keyOne keyTwo]}]
+    (println (str "One: " keyOne))
+    (println (str "Two: " keyTwo)))
+```
+
+The `:as` keyword saves access to the original map argument:
+
+```clojure
+(def map-destruct
+    [{:keys [keyOne keyTwo] :as parm-map}]
+    (println (str "One: " keyOne))
+    (println (str "Two: " keyTwo)))
+```
+
+### Anonymous Functions
+
+Functions that don't have names are _anonymous functions_.
+
+```clojure
+(fn [parameters]
+    (println (str "I don't do anything with these: " parameters)))
+```
+
+You could do this, if you wanted:
+
+```clojure
+(def named-function-from-anonymous 
+    (fn [parm] 
+(str "This is the parm " parm)))
+```
+
+Here we have a more compact way to define anonymous functions:
+
+```clojure
+#(* % 2)
+;; the above function, applied...
+(#(* % 2) 3)
+; => 6
+```
+
+...another example:
+
+```clojure
+(map #(str "Hi, " %)
+    ["name one" "name two" "name three"])
+```
+
+The `#` turns the function into an anonymous function, the `%` serves as a placeholder for any argument. If you need more than one argument, then just increment them: `%1`, `%2`, `%3`, and on. If you want to use a _rest_ item, then use `%&`, as expected.
